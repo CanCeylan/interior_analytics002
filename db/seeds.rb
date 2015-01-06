@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Location.create({name: "Zone 1", city: "Marmaris", address: "Asiklar Tepesi On", bounds: {"minX"=>-0.5, "maxX"=>80, "minY"=>-0.5, "maxY"=>140}})
+Location.create({name: "Zone 2", city: "Marmaris", address: "Asiklar Tepesi Arka", bounds: {"minX"=>-0.5, "maxX"=>80, "minY"=>70, "maxY"=>140}})

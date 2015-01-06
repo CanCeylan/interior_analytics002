@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106134038) do
+ActiveRecord::Schema.define(version: 20150106135717) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20150106134038) do
     t.text     "bounds",     limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.string   "mac_id",     limit: 255
+    t.string   "reason",     limit: 255
+    t.string   "hierarchy",  limit: 255
+    t.integer  "mapX",       limit: 4
+    t.integer  "mapY",       limit: 4
+    t.datetime "firstTime"
+    t.datetime "lastTime"
+    t.datetime "serverTime"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "visitors", force: :cascade do |t|

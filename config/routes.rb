@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :visitors, defaults: {format: 'json'}
-  #resources :logs, defaults: {format: 'json'}
+  resources :logs, defaults: {format: 'json'}
 
   get 'visitor/list' => 'visitors#visitor_list'
   get 'update/db' => 'visitors#update_db'
-  #get 'update/logs' => 'logs#push_data'
+  get 'update/logs' => 'logs#push_data'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

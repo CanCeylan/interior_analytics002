@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mac_id: MyString
+  reason: MyString
+  hierarchy: MyString
+  mapX: 1
+  mapY: 1
+  firstTime: 2015-01-06 15:57:17
+  lastTime: 2015-01-06 15:57:17
+  serverTime: 2015-01-06 15:57:17
+
+two:
+  mac_id: MyString
+  reason: MyString
+  hierarchy: MyString
+  mapX: 1
+  mapY: 1
+  firstTime: 2015-01-06 15:57:17
+  lastTime: 2015-01-06 15:57:17
+  serverTime: 2015-01-06 15:57:17

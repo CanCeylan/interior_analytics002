@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mac_id: MyString
+  ip_address: MyString
+  firstLocatedTime: 2015-01-06 15:38:58
+  at_location: 1
+
+two:
+  mac_id: MyString
+  ip_address: MyString
+  firstLocatedTime: 2015-01-06 15:38:58
+  at_location: 1

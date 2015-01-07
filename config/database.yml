@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: interior_analytics002_production
-  username: interior_analytics002
-  password: <%= ENV['INTERIOR_ANALYTICS002_DATABASE_PASSWORD'] %>
+   database: heroku_30d2eab945c4d3b
+   username: b82115a1485044
+   password: e55f60d4
+   socket: /tmp/mysql.sock
+   reconnect: true

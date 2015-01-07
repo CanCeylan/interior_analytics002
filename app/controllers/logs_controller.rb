@@ -4,8 +4,13 @@ class LogsController < ApplicationController
 		render json: Log.push
 	end
 
-
-	def storefront_potential
-		render json: Log.select("date(lastTime) AS log_time, COUNT(DISTINCT(mac_id)) AS potentials").group("date(lastTime)")
+	def potential
+		render json: Log.potential #json: Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id))").where("location = 1 or location = 2").group("date(lastTime)")
 	end
+
+	def conversion
+		render json: Log.conversion
+		#render json: Log.select("date(lastTime) as log_time, COUNT(mac_id)").group("date(lastTime)")
+	end
+
 end

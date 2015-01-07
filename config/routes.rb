@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'visitor/list' => 'visitors#visitor_list'
   get 'update/db' => 'visitors#update_db'
   get 'update/logs' => 'logs#push_data'
-  get 'dashboard/storefront_potential' => 'logs#storefront_potential'
+  get 'dashboard/storefront_potential' => 'logs#potential'
+  get 'dashboard/conversion' => 'logs#conversion'
+  
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

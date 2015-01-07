@@ -24,4 +24,13 @@ class Log < ActiveRecord::Base
 						})
 		end
 	end
+
+
+	def self.potential
+		return Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as potential").where("location = 1 or location = 2").group("date(lastTime)")
+	end
+
+	def self.conversion
+		return Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as conversion").where("location > 2").group("date(lastTime)")
+	end
 end

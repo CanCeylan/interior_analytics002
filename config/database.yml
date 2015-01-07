@@ -49,8 +49,8 @@ test:
 #
 production:
   <<: *default
-   database: heroku_30d2eab945c4d3b
-   username: b82115a1485044
-   password: e55f60d4
-   socket: /tmp/mysql.sock
-   reconnect: true
+  database: heroku_30d2eab945c4d3b
+  username: b82115a1485044
+  password: e55f60d4
+  socket: /tmp/mysql.sock
+  reconnect: true

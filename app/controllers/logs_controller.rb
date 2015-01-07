@@ -17,4 +17,8 @@ class LogsController < ApplicationController
 		render json: Log.new_shoppers
 	end
 
+	def repeat_shoppers
+		render json: Log.repeat_shoppers
+	end
+
 end

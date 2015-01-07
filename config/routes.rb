@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get 'dashboard/storefront_potential' => 'logs#potential'
   get 'dashboard/conversion' => 'logs#conversion'
   get 'dashboard/new_shoppers' => 'logs#new_shoppers'
+  get 'dashboard/repeat_shoppers' => 'logs#repeat_shoppers'
   
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

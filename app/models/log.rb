@@ -38,7 +38,11 @@ class Log < ActiveRecord::Base
 	end
 
 	def self.new_shoppers
-		return Log.select("COUNT(DISTINCT(mac_id)) as new_shoppers").where("location > 2 and date(firstTime) < ?", Date.today)
+		return Log.select("COUNT(DISTINCT(mac_id)) as new_shoppers").where("location > 2 and date(firstTime) >= ?", Date.today)
+	end
+
+	def self.repeat_shoppers
+		return Log.select("COUNT(DISTINCT(mac_id)) as repeat_shoppers").where("location > 2 and date(firstTime) < ?", Date.today)
 	end
 
 end

@@ -13,4 +13,8 @@ class LogsController < ApplicationController
 		#render json: Log.select("date(lastTime) as log_time, COUNT(mac_id)").group("date(lastTime)")
 	end
 
+	def new_shoppers
+		render json: Log.new_shoppers
+	end
+
 end

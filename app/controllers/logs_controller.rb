@@ -14,11 +14,11 @@ class LogsController < ApplicationController
 	end
 
 	def new_shoppers
-		render json: Log.new_shoppers
+		render json: Log.new_shoppers(params)
 	end
 
 	def repeat_shoppers
-		render json: Log.repeat_shoppers
+		render json: Log.repeat_shoppers(params)
 	end
 
 end

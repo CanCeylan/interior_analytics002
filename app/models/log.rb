@@ -37,12 +37,12 @@ class Log < ActiveRecord::Base
 		return Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as conversion").where("location > 2").group("date(lastTime)")
 	end
 
-	def self.new_shoppers
-		return Log.select("COUNT(DISTINCT(mac_id)) as new_shoppers").where("location > 2 and date(firstTime) >= ?", Date.today)
+	def self.new_shoppers(params)
+		return Log.select("DISTINCT(mac_id) as new_shoppers").where("location > 2 and date(firstTime) >= date(lastTime) and date(lastTime) = ?", params[:deyt].to_date)
 	end
 
-	def self.repeat_shoppers
-		return Log.select("COUNT(DISTINCT(mac_id)) as repeat_shoppers").where("location > 2 and date(firstTime) < ?", Date.today)
+	def self.repeat_shoppers(params)
+		return Log.select("DISTINCT(mac_id) as repeat_shoppers").where("location > 2 and date(firstTime) < date(lastTime) and date(lastTime) = ?", params[:deyt].to_date)
 	end
 
 end

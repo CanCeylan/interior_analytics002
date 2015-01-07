@@ -8,6 +8,8 @@
 
 Location.create({name: "Outside 1", city: "Marmaris", address: "Zara Outside South", bounds: {"minX"=>-0.5, "maxX"=>190, "minY"=>-0.5, "maxY"=>20}})
 Location.create({name: "Outside 2", city: "Marmaris", address: "Zara Outside West", bounds: {"minX"=>-0.5, "maxX"=>25, "minY"=>-0.5, "maxY"=>105}})
-Location.create({name: "Store", city: "Marmaris", address: "Zara Store", bounds: {"minX"=>25, "maxX"=>190, "minY"=>20, "maxY"=>105}})
-Location.create({name: "Checkout", city: "Marmaris", address: "Zara Checkout", bounds: {"minX"=>120, "maxX"=>190, "minY"=>90, "maxY"=>105}})
+Location.create({name: "Women", city: "Marmaris", address: "Zara Women", bounds: {"minX"=>25, "maxX"=>120, "minY"=>60, "maxY"=>105}})
+Location.create({name: "Men", city: "Marmaris", address: "Zara Men", bounds: {"minX"=>120, "maxX"=>190, "minY"=>20, "maxY"=>60}})
+Location.create({name: "All", city: "Marmaris", address: "Zara All", bounds: {"minX"=>25, "maxX"=>120, "minY"=>20, "maxY"=>60}})
+Location.create({name: "Checkout", city: "Marmaris", address: "Zara Checkout", bounds: {"minX"=>120, "maxX"=>190, "minY"=>60, "maxY"=>105}})
 

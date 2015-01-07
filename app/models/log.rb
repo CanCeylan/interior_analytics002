@@ -19,7 +19,9 @@ class Log < ActiveRecord::Base
 						mapY: v["MapCoordinate"]["y"],
 						firstTime: v["Statistics"]["firstLocatedTime"],
 						lastTime: v["Statistics"]["lastLocatedTime"],
-						serverTime: v["Statistics"]["currentServerTime"]})
+						serverTime: v["Statistics"]["currentServerTime"],
+						location: Location.get_location(v["MapCoordinate"])
+						})
 		end
 	end
 end

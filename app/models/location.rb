@@ -5,6 +5,9 @@ class Location < ActiveRecord::Base
 	serialize :bounds, Hash
 
 	def self.get_location(coordinates)
+		puts ">>>>> ISTE GELDIM BURDAYIM"
+		puts coordinates.to_s
+		puts "  -   -    -   -  "
 		Location.all.each do |zone|
 			if zone.bounds["minX"].to_i <= coordinates["x"] &&
 			   coordinates["x"] <= zone.bounds["maxX"].to_i &&

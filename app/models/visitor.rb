@@ -12,7 +12,7 @@ class Visitor < ActiveRecord::Base
 
 	def self.parser(visitor_list)
 		visitor_list.each do |v|
-			visitor = Visitor.find_or_create_by({mac_id: v["macAddress"], at_location: 0})
+			visitor = Visitor.find_or_create_by({mac_id: v["macAddress"]})
 			#firstLocatedTime her bir mac_id icin tekse, buraya onu da eklemeliyiz.
 			location_id = Location.get_location(v["MapCoordinate"])
 			start_time = v["Statistics"]["lastLocatedTime"]

@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'rest_client'
 gem 'json'
 gem 'time_difference'
+gem 'rails_12factor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

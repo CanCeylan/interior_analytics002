@@ -1,5 +1,7 @@
 class LogsController < ApplicationController
 
+	respond_to :json
+	
 	def push_data
 		render json: Log.push
 	end

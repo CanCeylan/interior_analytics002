@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :logs, defaults: {format: 'json'}
 
   get 'visitor/list' => 'visitors#visitor_list'
+  
   get 'update/db' => 'visitors#update_db'
   get 'update/logs' => 'logs#push_data'
+
   get 'dashboard/storefront_potential' => 'logs#potential'
   get 'dashboard/conversion' => 'logs#conversion'
   get 'dashboard/new_shoppers' => 'logs#new_shoppers'

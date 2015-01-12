@@ -12,7 +12,7 @@ class LogsController < ApplicationController
 	end
 
 	def conversion
-		@convs =  Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as conversion").where("location > 2").group("date(lastTime)")
+		@convs =  Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as conversion").where("location > 2 and date(lastTime) between ? and ?", params[:start], params[:end]).group("date(lastTime)")
 
 		render json: @convs
 	end

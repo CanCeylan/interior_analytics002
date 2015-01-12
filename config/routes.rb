@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'update/logs' => 'logs#push_data'
 
   get 'dashboard/storefront_potential' => 'logs#potential'
-  get 'dashboard/conversion' => 'logs#conversion'
+  get 'dashboard/storefront_conversion' => 'logs#conversion'
   get 'dashboard/new_shoppers' => 'logs#new_shoppers'
   get 'dashboard/repeat_shoppers' => 'logs#repeat_shoppers'
   

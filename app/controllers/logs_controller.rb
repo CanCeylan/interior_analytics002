@@ -12,17 +12,15 @@ class LogsController < ApplicationController
 	end
 
 	def conversion
-		@convs =  Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as conversion").where("location > 2 and date(lastTime) between ? and ?", params[:start], params[:end]).group("date(lastTime)")
-
-		render json: @convs
+		render json: Log.select("date(lastTime) as log_time, COUNT(DISTINCT(mac_id)) as conversion").where("location > 2 and date(lastTime) between ? and ?", params[:start], params[:end]).group("date(lastTime)")
 	end
 
 	def new_shoppers
-		render json: Log.new_shoppers(params)
+		render json: Log.select("DISTINCT(mac_id) as new_shoppers").where("location > 2 and date(firstTime) >= date(lastTime) and date(lastTime) between ? and ?", params[:start], params[:end])
 	end
 
 	def repeat_shoppers
-		render json: Log.repeat_shoppers(params)
+		render json: Log.select("DISTINCT(mac_id) as repeat_shoppers").where("location > 2 and date(firstTime) < date(lastTime) and date(lastTime) between ? and ?", params[:start], params[:end])
 	end
 
 end

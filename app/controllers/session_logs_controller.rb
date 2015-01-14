@@ -14,9 +14,9 @@ class SessionLogsController < ApplicationController
 			else	
 				if session.pointer.present? #if session already started
 					difference = pointer - session.pointer
-					session.pointer = pointer
 					if difference <= 300
 						session.duration += difference
+						session.pointer = pointer
 					else # session ends
 						session.isClosed = true
 						SessionLog.create({logTime: pointer, macID: l["mac_id"], pointer: pointer})

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107091947) do
+ActiveRecord::Schema.define(version: 20150114100417) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 20150107091947) do
     t.integer  "location",   limit: 4
   end
 
+  create_table "session_logs", force: :cascade do |t|
+    t.string   "macID",       limit: 255
+    t.datetime "logTime"
+    t.integer  "location_id", limit: 4
+    t.integer  "duration",    limit: 4,   default: 0
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.datetime "pointer"
+    t.boolean  "isClosed",    limit: 1
+  end
+
+  add_index "session_logs", ["location_id"], name: "index_session_logs_on_location_id", using: :btree
+
   create_table "visitors", force: :cascade do |t|
     t.string   "mac_id",           limit: 255
     t.string   "ip_address",       limit: 255
@@ -58,6 +71,7 @@ ActiveRecord::Schema.define(version: 20150107091947) do
   add_index "visits", ["location_id"], name: "index_visits_on_location_id", using: :btree
   add_index "visits", ["visitor_id"], name: "index_visits_on_visitor_id", using: :btree
 
+  add_foreign_key "session_logs", "locations"
   add_foreign_key "visits", "locations"
   add_foreign_key "visits", "visitors"
 end

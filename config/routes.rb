@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'dashboard/repeat_shoppers' => 'logs#repeat_shoppers'
   get 'dashboard/overview' => 'logs#overview'
   
+  get 'session_logs' => 'session_logs#method1'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

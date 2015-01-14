@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  macID: MyString
+  logTime: 2015-01-14 10:13:59
+  location_id: 
+  duration: 1
+
+two:
+  macID: MyString
+  logTime: 2015-01-14 10:13:59
+  location_id: 
+  duration: 1
